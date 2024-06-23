@@ -1,4 +1,4 @@
-This is the basic curd operation.
+This is the basic php curd operation.
 
 Step 1. Store this file into xampp>htdocs folder.
 Step 2. Import the sql file into Databse(xampp).
