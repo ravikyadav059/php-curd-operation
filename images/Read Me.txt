@@ -1,0 +1,13 @@
+This is the basic curd operation.
+
+Step 1. Store this file into xampp>htdocs folder.
+Step 2. Import the sql file into Databse(xampp).
+Step 3. Extract the images.zip 
+Step 4. 
+        Already inserted id and password for login is 
+        a) email :- ram@gmail.com  password : - 123
+        b) email :- ravi@gmail.com  password : - 123
+
+Step 5. After Filling the details you can see the person details.
+
+Thank you..

@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 $conn = mysqli_connect("localhost", "root", "", "newweb");
 if ($conn) {
    // echo "The Database Conection Succesfull";
@@ -8,6 +10,17 @@ if ($conn) {
 }
 
 $id = $_GET['id'];
+
+ // Session for login and logout
+ $username_profile = $_SESSION['email'];
+ if ($username_profile == true) {
+     # code...
+ }
+ else
+ {
+     header('location:login.php');
+ }
+
 
 // display
 $sql = "SELECT * FROM signup WHERE id=$id";

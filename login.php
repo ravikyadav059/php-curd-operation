@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,7 +34,8 @@
             text-align: center;
         }
 
-        input[type="email"], input[type="password"] {
+        input[type="email"],
+        input[type="password"] {
             width: calc(100% - 20px);
             padding: 10px;
             margin: 10px 0;
@@ -103,15 +108,17 @@
         $sql = "SELECT email, password FROM user WHERE email='$email'";
         $result = mysqli_query($conn, $sql);
 
-            //jay
-
+        //jay
+    
         if (mysqli_num_rows($result) == 1) {
             $row = mysqli_fetch_assoc($result);
 
             // setcookie("ID",$row['id']); //jay
-            setcookie("EMAIL",$row['email']); //jay
-
+            setcookie("EMAIL", $row['email']); //jay
+            
+            $_SESSION['email'] = $email;
             if ($password === $row['password']) {
+                
                 echo '<script>window.location = "welcome.php";</script>';
             } else {
                 echo '<script> alert("Login Failed");</script>';
@@ -121,16 +128,6 @@
         }
 
 
-        // new added and try start
-        $sql_signup = "SELECT * FROM signup WHERE email='$email'";
-        $result_signup = mysqli_query($conn,$sql_signup);
-        if (mysqli_num_rows($result) == 1) {
-            $row = mysqli_fetch_assoc($result);
-
-        }
-
-         // new added and try end
-        
     }
     ?>
 </body>

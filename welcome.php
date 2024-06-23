@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -142,7 +145,7 @@
 <body>
     <h4>Welcome</h4>
 
-    <h4><a href='login.php'><button class="btn-logout" name="submit" type="submit" >LOGOUT</button></a></h4>
+    <h4><a href='logout.php'><button class="btn-logout" name="submit" type="submit" >LOGOUT</button></a></h4>
     <?php
     $conn = mysqli_connect("localhost", "root", "", "newweb");
     if ($conn) {
@@ -152,6 +155,17 @@
         die("Connection Failed" . mysqli_connect_error());
     }
 
+     // Session for login and logout
+     $username_profile = $_SESSION['email'];
+     if ($username_profile == true) {
+         # code...
+     }
+     else
+     {
+         header('location:login.php');
+     }
+ 
+
     if (isset($_POST['delete'])) {
         $id = $_POST['delete_id'];
         $delete_query = "DELETE FROM signup WHERE id=$id";
@@ -159,7 +173,8 @@
         $result = mysqli_query($conn, $delete_query);
         $result_login = mysqli_query($conn, $delete_query_login);
         if ($result && $result_login) {
-            echo "Delete successful";
+            echo "<script>alert('Delete successful')</script>";
+            header('location:login.php');
         } else {
             echo "Delete failed";
         }

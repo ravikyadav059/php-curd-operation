@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,11 +29,14 @@
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
-        table, th, td {
+        table,
+        th,
+        td {
             border: 1px solid #ddd;
         }
 
-        th, td {
+        th,
+        td {
             padding: 15px;
             text-align: left;
         }
@@ -75,11 +81,15 @@
         }
 
         @media (max-width: 600px) {
-            table, th, td {
+
+            table,
+            th,
+            td {
                 display: block;
             }
 
-            th, td {
+            th,
+            td {
                 width: 100%;
                 box-sizing: border-box;
             }
@@ -123,6 +133,16 @@
     } else {
         mysqli_close($conn);
         die("Connection Failed" . mysqli_connect_error());
+    }
+
+    // Session for login and logout
+    $username_profile = $_SESSION['email'];
+    if ($username_profile == true) {
+        # code...
+    }
+    else
+    {
+        header('location:login.php');
     }
 
     if (isset($_POST['delete'])) {
