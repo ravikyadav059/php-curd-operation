@@ -2,7 +2,7 @@ This is the basic php curd operation.
 
 Step 1. Store this file into xampp>htdocs folder.
 Step 2. Import the sql file into Databse(xampp).
-Step 3. Extract the images.zip 
+Step 3. Extract the images.zip  
 Step 4. 
         Already inserted id and password for login is 
         a) email :- ram@gmail.com  password : - 123

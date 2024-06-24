@@ -258,7 +258,7 @@ body {
                 //echo "<br> New Record inserted Succesfull";
 
             } else {
-                echo "Insert is Failed";
+                echo "Insert is Failed"; 
             }
         }
     }
