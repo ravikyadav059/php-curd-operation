@@ -50,8 +50,9 @@ if (isset($_POST['update_form'])) {
 
     // images php 
     $filename = $_FILES["photo"]["name"];
+    $uni = uniqid(); // Generates a unique string
     $tempname = $_FILES["photo"]["tmp_name"];
-    $folder = "images/" . $filename;
+    $folder = "images/" . $uni . "_" . $filename; // Combine the unique string with the original filename
     move_uploaded_file($tempname, $folder);
 
     // Validation
