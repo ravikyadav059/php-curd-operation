@@ -40,6 +40,13 @@ if (isset($_POST['update_form'])) {
     $confirm_password = $_POST['confirm_password'];
     $photo = $_FILES['photo'];
 
+   // Specify the path to the previous image
+    $previousImagePath = "images/previous_image.jpg"; // Replace with your actual path
+
+    // Delete the previous image if it exists
+    if (file_exists($previousImagePath)) {
+        unlink($previousImagePath);
+    }
 
     // images php 
     $filename = $_FILES["photo"]["name"];
