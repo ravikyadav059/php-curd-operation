@@ -41,7 +41,7 @@ if (isset($_POST['update_form'])) {
     $photo = $_FILES['photo'];
 
    // Specify the path to the previous image
-    $previousImagePath = "images/previous_image.jpg"; // Replace with your actual path
+    $previousImagePath = $row['photo']; // Replace with your actual path
 
     // Delete the previous image if it exists
     if (file_exists($previousImagePath)) {
