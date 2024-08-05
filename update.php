@@ -53,6 +53,8 @@ if (isset($_POST['update_form'])) {
     $uni = uniqid(); // Generates a unique string
     $tempname = $_FILES["photo"]["tmp_name"];
     $folder = "images/" . $uni . "_" . $filename; // Combine the unique string with the original filename
+     // Or Used This method below method. Add User Id Instead Of Uniqid() Method. example.
+    // $folder = "images/" . $id . "_" . $filename; 
     move_uploaded_file($tempname, $folder);
 
     // Validation
